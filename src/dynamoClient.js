@@ -1,12 +1,15 @@
 // src/dynamoClient.js
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const {
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import {
   DynamoDBDocumentClient,
   ScanCommand,
   GetCommand,
   PutCommand,
   DeleteCommand,
-} = require("@aws-sdk/lib-dynamodb");
+} from "@aws-sdk/lib-dynamodb";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const TABLE_NAME = process.env.DDB_TABLE;
 const PRIMARY_KEY = process.env.DDB_PRIMARY_KEY || "id";
@@ -32,7 +35,7 @@ const docClient = DynamoDBDocumentClient.from(rawClient, {
   },
 });
 
-module.exports = {
+export {
   docClient,
   TABLE_NAME,
   PRIMARY_KEY,
